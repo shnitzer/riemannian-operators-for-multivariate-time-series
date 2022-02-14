@@ -1,5 +1,8 @@
 function [p,modes_ind] = mode_detect(DM_dist,Euc_dist,siz,k,sigma2,k_modes)
 
+% Implementation of "Diffusion geometric methods for fusion of remotely
+% sensed data", Murphy & Maggioni.
+%
 % DM_dist  - Diffusion distance between points (NxN)
 % Euc_dist - Euclidean distance between points (NxN)
 % siz      - Image size (m x n = N)
