@@ -1,5 +1,8 @@
 function y_lbld = spec_spat_lbl(DM_dist_inf,p,modes_ind,r_s,siz)
 
+% Implementation of "Diffusion geometric methods for fusion of remotely
+% sensed data", Murphy & Maggioni.
+%
 % DM_dist_inf - Diffusion distance between points with Inf on its diagonal(NxN)
 % p           - 
 % modes_ind   - Indices of chosen modes
