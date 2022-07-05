@@ -109,7 +109,8 @@ savptdisp  = 0;
 
 for lev = 8
     load([fname,'_wavelet_eigs_level_',num2str(lev),'.mat'])
-    
+
+% % Display eigenvectors of S:
 %     v.data     = VS_l;
 %     v.vind     = veind+1;
 %     thresh     = 0.1*N;%0.03;
@@ -137,7 +138,7 @@ for lev = 8
 %         end
 %     end
     
-    
+    % Display eigenvectors of F:
     v.data     = VA_l;
     v.vind     = veind;
     thresh     = 0.1*N; %0.03;
@@ -260,52 +261,3 @@ for lev = 7
     display_gyre_results( x, y, v, lev, ftitle, figpos, axang );
 end
 end
-%%
-% %% Display clustering - with consecutive kernels - not correct!
-% % since the consecutive frame is already taken into account in the original
-% % display function
-% 
-% ccolor = [0 0 1;...
-%           0 1 0;...
-%           1 0 0;...
-%           1 1 0;...
-%           0 1 1];
-% 
-% v.map  = ccolor;
-% v.type = 'clust';
-% 
-% figpos = [100,200,1360,420];
-% axang  = [-8,50];
-% 
-% for lev = 5
-%     v.data = idx_s{lev};
-%     ftitle = ['S clustering - level ',num2str(lev)];
-%     display_gyre_results_consec( x, y, v, lev, ftitle, figpos, axang );
-%     
-%     v.data = idx_a{lev};
-%     ftitle = ['A clustering - level ',num2str(lev)];
-%     display_gyre_results_consec( x, y, v, lev, ftitle, figpos, axang );
-% end
-% 
-% %% Display eigenvectors - with consecutive kernels - not correct!
-% % since the consecutive frame is already taken into account in the original
-% % display function
-% 
-% nL     = floor(log2(T));
-% figpos = [100,200,1360,420];
-% axang  = [-8,50];
-% veind  = 1;
-% v.type = 'eig';
-% 
-% for lev = 6
-%     load([fname,'_wavelet_eigs_level_',num2str(lev),'.mat'])
-%     
-%     v.data = VS_l;
-%     v.vind = veind;
-%     ftitle = ['S eigenvector no. ',num2str(veind),', level ',num2str(lev)];
-%     display_gyre_results_consec( x, y, v, lev, ftitle, figpos, axang );
-%     
-%     v.data = VA_l;
-%     ftitle = ['A eigenvector no. ',num2str(veind),', level ',num2str(lev)];
-%     display_gyre_results_consec( x, y, v, lev, ftitle, figpos, axang );
-% end
